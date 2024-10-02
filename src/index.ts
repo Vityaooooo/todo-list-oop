@@ -11,7 +11,7 @@ const formElement: HTMLFormElement = document.querySelector('.todos__form');
 
 function handleFormSubmit(data: string) {
     const todoItem = new Item(template);
-    const itemElement = todoItem.render(data);
+    const itemElement = todoItem.render({id: '8', name: data});
     contentElement.prepend(itemElement);
     todoForm.clearForm();
 }
