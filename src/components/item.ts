@@ -1,8 +1,15 @@
-export function createItem(template: HTMLTemplateElement, name: string) {
-    const itemElement = template.content.querySelector('.todo-item').cloneNode(true) as HTMLElement;
-    const titleElement = itemElement.querySelector('.todo-item__text') as HTMLSpanElement;
+export class Item {
 
-    titleElement.textContent = name;
+    protected itemElement: HTMLElement;
+    protected title: HTMLElement;
 
-    return itemElement;
+    constructor(template: HTMLTemplateElement) {
+        this.itemElement = template.content.querySelector('.todo-item').cloneNode(true) as HTMLElement;
+        this.title = this.itemElement.querySelector('.todo-item__text') as HTMLSpanElement;
+    }
+
+    render(title: string) {
+        this.title.textContent = title;
+        return this.itemElement;
+    }
 }
