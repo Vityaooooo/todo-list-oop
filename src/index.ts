@@ -3,6 +3,7 @@ import "./styles/styles.css"
 import { todos } from './utils/constants';
 import { Item } from './components/Item';
 import { Form } from './components/Form';
+import { ToDoModel } from './components/ToDoModel'
 
 const contentElement = document.querySelector('.todos__list');
 
