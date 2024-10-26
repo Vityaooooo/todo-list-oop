@@ -12,11 +12,13 @@ export interface IFormConstructor {
     new (formTemplate: HTMLTemplateElement): IForm;
 }
 
-export class Form {
+export class Form implements IForm {
     protected formElement: HTMLFormElement;
     protected inputField: HTMLInputElement;
     protected handleFormSubmit: Function;
     protected submitButton: HTMLButtonElement;
+    buttonText: string;
+    placeholder: string;
 
     constructor(formTemplate: HTMLTemplateElement) {
         this.formElement = formTemplate.content.querySelector('.todos__form').cloneNode(true) as HTMLFormElement;
