@@ -13,7 +13,6 @@ export interface IViewItemConstructor {
 }
 
 export class Item implements IViewItem {
-
     protected itemElement: HTMLElement;
     protected title: HTMLElement;
     protected _id: string;
