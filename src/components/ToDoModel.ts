@@ -15,6 +15,11 @@ export class ToDoModel implements IToDoModel {
         this._items = data;
     }
 
+    editItem(id: string, data: string) {
+        const editedItem = this.getItem(id);
+        editedItem.name = data;
+    }
+
     addItem(data: string) {
         const uniqueId = Math.max( ...this._items.map( (item) => Number(item.id))) + 1;
         const newItem: IItem = {id: String(uniqueId), name: data};

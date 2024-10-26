@@ -17,8 +17,6 @@ export class Form implements IForm {
     protected inputField: HTMLInputElement;
     protected handleFormSubmit: Function;
     protected submitButton: HTMLButtonElement;
-    buttonText: string;
-    placeholder: string;
 
     constructor(formTemplate: HTMLTemplateElement) {
         this.formElement = formTemplate.content.querySelector('.todos__form').cloneNode(true) as HTMLFormElement;
@@ -30,6 +28,14 @@ export class Form implements IForm {
             evt.preventDefault();
             this.handleFormSubmit(this.inputField.value);
         })
+    }
+
+    set buttonText(value: string) {
+        this.submitButton.textContent = value;
+    }
+
+    set placeholder(value: string) {
+        this.inputField.placeholder = value;
     }
 
     setHandler(handleFormSubmit: Function) {
