@@ -47,7 +47,6 @@ export class Item implements IViewItem {
 
     setCopyHandler(handleCopyItem: Function) {
         this.handleCopyItem = handleCopyItem;
-
         this.copyButton.addEventListener('click', (evt) => {
             this.handleCopyItem(this);
         });
@@ -55,7 +54,6 @@ export class Item implements IViewItem {
 
     setDeleteHandler(handleDeleteItem: Function) {
         this.handleDeleteItem = handleDeleteItem;
-
         this.deleteButton.addEventListener('click', (evt) => {
             this.handleDeleteItem(this);
         });
